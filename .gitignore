@@ -1,0 +1,21 @@
+# Local credentials and private configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies, caches and editor state
+node_modules/
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Temporary files and local reference captures
+work/
+tmp/
+*.log
+references/screenshots/
