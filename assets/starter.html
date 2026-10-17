@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="MyUi-A：炭灰深色底、柔和蓝青光晕、极淡网格与完整首页组件的独立设计示例。">
+  <meta name="color-scheme" content="dark light">
+  <title>MyUi-A · 首页设计示例</title>
+  <link rel="stylesheet" href="myui-a.css">
+  <script src="starter.js" defer></script>
+</head>
+<body class="myui-a" data-theme="dark">
+  <svg class="mua-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="mua-brand-gradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#56b9e9"/><stop offset="1" stop-color="#9562ef"/></linearGradient></defs>
+    <symbol id="mua-mark" viewBox="0 0 28 28"><path fill="url(#mua-brand-gradient)" stroke="none" d="M3 20V8l5-3 6 10 6-10 5 3v12l-5 3V13l-6 10-6-10v10z"/></symbol>
+    <symbol id="mua-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="mua-book" viewBox="0 0 24 24"><path d="M12 5v15M3 4h5a5 5 0 0 1 4 2 5 5 0 0 1 4-2h5v14h-5a5 5 0 0 0-4 2 5 5 0 0 0-4-2H3z"/></symbol>
+    <symbol id="mua-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 4-4 7-8 9-4-2-8-5-8-9V6z"/></symbol>
+    <symbol id="mua-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="mua-code" viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6"/></symbol>
+    <symbol id="mua-spark" viewBox="0 0 24 24"><path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></symbol>
+    <symbol id="mua-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7z"/></symbol>
+    <symbol id="mua-gear" viewBox="0 0 24 24"><path d="m9 3-1 3-3 1-2 4 2 3v3l4 3 3-1 3 1 4-3v-3l2-3-2-4-3-1-1-3z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="mua-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M8 16v-4m5 4V7m5 9v-6"/></symbol>
+    <symbol id="mua-gauge" viewBox="0 0 24 24"><path d="M4 19a10 10 0 1 1 16 0M12 13l5-5"/><circle cx="12" cy="13" r="1.5"/></symbol>
+    <symbol id="mua-dollar" viewBox="0 0 24 24"><path d="M12 2v20m5-16H9a3 3 0 0 0 0 6h6a3 3 0 0 1 0 6H6"/></symbol>
+    <symbol id="mua-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M17 5a3 3 0 0 1 0 6m2 10v-3a6 6 0 0 0-3-5"/></symbol>
+    <symbol id="mua-heart" viewBox="0 0 24 24"><path d="m12 21-8-8A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 8 8z"/><path d="m8 12 3 3 5-5"/></symbol>
+    <symbol id="mua-moon" viewBox="0 0 24 24"><path d="M21 13a9 9 0 1 1-10-10 7 7 0 0 0 10 10"/></symbol>
+    <symbol id="mua-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="mua-language" viewBox="0 0 24 24"><path d="M2 5h12M7 2v3m3 0c-1 5-4 8-8 10m2-7c2 4 4 6 8 8m2 5 4-10 4 10m-6-4h4"/></symbol>
+    <symbol id="mua-bell" viewBox="0 0 24 24"><path d="M5 10a7 7 0 0 1 14 0c0 4 2 6 2 7H3c0-1 2-3 2-7m4 11h6"/></symbol>
+    <symbol id="mua-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="mua-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="mua-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="mua-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="mua-play" viewBox="0 0 24 24"><path d="m7 4 13 8-13 8z"/></symbol>
+  </svg>
+  <a class="mua-skip" href="#content" data-en="Skip to content">跳到正文</a>
+  <header class="mua-header" id="mua-header">
+    <div class="mua-shell"><div class="mua-nav">
+      <a href="#content" class="mua-brand" aria-label="MyUi-A 首页"><svg class="mua-mark" aria-hidden="true"><use href="#mua-mark"/></svg><span>MyUi-A</span></a>
+      <div style="display:flex;align-items:center;min-width:0">
+        <nav class="mua-navlinks" aria-label="主导航">
+          <a href="#features" data-en="Features">产品能力</a><a href="#demo" data-en="Demo">示例面板</a><a href="#workflow" data-en="Workflow">工作流程</a><a href="#guide" data-guide data-en="Docs">文档</a><a href="#footer" data-en="About">关于</a>
+        </nav>
+        <div class="mua-tools">
+          <span class="mua-divider" aria-hidden="true"></span>
+          <details class="mua-dropdown"><summary class="mua-icon-btn" aria-label="更改语言"><svg aria-hidden="true"><use href="#mua-language"/></svg></summary><div class="mua-menu" role="group" aria-label="界面语言"><button type="button" data-language="zh" aria-pressed="true">简体中文</button><button type="button" data-language="en" aria-pressed="false">English</button></div></details>
+          <details class="mua-dropdown"><summary class="mua-icon-btn" aria-label="切换主题"><svg aria-hidden="true" data-theme-icon><use href="#mua-moon"/></svg></summary><div class="mua-menu" role="group" aria-label="显示主题"><button type="button" data-set-theme="light" aria-pressed="false" data-en="Light">浅色</button><button type="button" data-set-theme="dark" aria-pressed="true" data-en="Dark">深色</button><button type="button" data-set-theme="system" aria-pressed="false" data-en="System">系统</button></div></details>
+          <div class="mua-popup-host"><button class="mua-icon-btn" id="mua-notice-toggle" type="button" aria-label="通知" aria-expanded="false" aria-controls="mua-notice" aria-haspopup="dialog"><svg aria-hidden="true"><use href="#mua-bell"/></svg><span class="mua-unread" id="mua-unread">2</span></button>
+            <div class="mua-notice" id="mua-notice" role="dialog" aria-labelledby="mua-notice-title" hidden>
+              <h2 id="mua-notice-title" data-en="Updates">系统公告</h2><p class="mua-notice-sub" data-en="Product updates and release notes">产品更新与版本动态</p>
+              <div class="mua-switch" role="tablist" aria-label="公告类型"><button role="tab" id="notice-tab" aria-controls="notice-panel" aria-selected="true" tabindex="0" data-notice-tab="notice" data-en="Notices">通知</button><button role="tab" id="timeline-tab" aria-controls="timeline-panel" aria-selected="false" tabindex="-1" data-notice-tab="timeline" data-en="Timeline">时间线</button></div>
+              <div class="mua-notice-body" id="notice-panel" role="tabpanel" aria-labelledby="notice-tab" tabindex="0"><p data-en="Welcome to the MyUi-A design sample.">欢迎使用 MyUi-A 首页设计示例。</p><p data-en="Explore the charcoal background, subtle blue and cyan glow, masked grid, and responsive components.">在这里体验炭灰底色、低透明度蓝青光晕、遮罩网格与响应式组件。</p><p data-en="Protocol examples and metrics are local demonstration data.">协议示例与面板指标均为本地演示数据。</p></div>
+              <div class="mua-notice-body" id="timeline-panel" role="tabpanel" aria-labelledby="timeline-tab" tabindex="0" hidden><div class="mua-timeline"><p data-en="MyUi-A design sample released">MyUi-A 设计示例已就绪</p><time datetime="2026-10-18">2026-10-18</time><p data-en="Dark and light themes, four protocol examples, and mobile navigation.">深浅两套主题、四协议演示和移动端导航。</p></div></div>
+              <div class="mua-notice-bottom"><button class="mua-btn mua-btn-primary mua-btn-small" type="button" data-close-notice data-en="Close">关闭</button></div>
+            </div>
+          </div>
+          <span class="mua-divider" aria-hidden="true"></span><a class="mua-btn mua-btn-primary mua-btn-small" href="#demo" data-en="Start">开始使用</a>
+        </div>
+      </div>
+      <div class="mua-mobile-tools">
+        <details class="mua-dropdown"><summary class="mua-icon-btn" aria-label="切换主题"><svg aria-hidden="true" data-theme-icon><use href="#mua-moon"/></svg></summary><div class="mua-menu" role="group" aria-label="显示主题"><button type="button" data-set-theme="light" aria-pressed="false" data-en="Light">浅色</button><button type="button" data-set-theme="dark" aria-pressed="true" data-en="Dark">深色</button><button type="button" data-set-theme="system" aria-pressed="false" data-en="System">系统</button></div></details>
+        <button class="mua-icon-btn" id="mua-open-mobile" type="button" aria-label="打开导航菜单" aria-haspopup="dialog" aria-controls="mua-mobile-menu"><svg aria-hidden="true"><use href="#mua-menu"/></svg></button>
+      </div>
+    </div></div>
+  </header>
+
+  <main id="content" tabindex="-1">
+    <section class="mua-hero" aria-labelledby="hero-title">
+      <div class="mua-glow" aria-hidden="true"></div><div class="mua-grid" aria-hidden="true"></div>
+      <div class="mua-container mua-hero-layout">
+        <div class="mua-hero-copy">
+          <div class="mua-badge mua-reveal" data-delay="0"><span class="mua-ping" aria-hidden="true"></span><span data-en="BUILT FOR AI APPLICATIONS">为 AI 应用而构建</span></div>
+          <h1 id="hero-title" class="mua-title mua-reveal" data-delay="60"><span data-en="One gateway,">一个入口，连接</span><br><span class="mua-gradient" data-en="endless AI possibilities">无限 AI 可能</span></h1>
+          <p class="mua-lead mua-reveal" data-delay="120" data-en="Connect models and tools through one consistent protocol. Give every request a clear, reliable place to work.">用统一协议连接模型与工具，在简洁、可靠的工作空间里管理每一次调用。</p>
+          <div class="mua-actions mua-reveal" data-delay="180"><a class="mua-btn mua-btn-primary" href="#demo"><span data-en="Get started">开始使用</span><svg class="mua-arrow" aria-hidden="true"><use href="#mua-arrow"/></svg></a><a class="mua-btn mua-btn-outline" href="#features" data-en="Explore features">查看能力</a><button type="button" class="mua-btn mua-btn-outline" data-guide><svg aria-hidden="true"><use href="#mua-book"/></svg><span data-en="Docs">文档</span></button></div>
+          <div class="mua-apps mua-reveal" data-delay="240"><p class="mua-apps-label" data-en="FAMILIAR WORKFLOWS">常用工作流支持</p><p class="mua-apps-desc" data-en="Keep the tools you know. Connect through familiar protocols.">保留熟悉的工具，通过标准协议开始连接。</p><div class="mua-app-list"><a class="mua-app-pill" href="#demo"><svg aria-hidden="true"><use href="#mua-spark"/></svg><span>AI Studio</span></a><a class="mua-app-pill" href="#demo"><svg aria-hidden="true"><use href="#mua-code"/></svg><span>Dev Tools</span></a><span class="mua-app-pill is-decorative"><svg aria-hidden="true"><use href="#mua-more"/></svg><span data-en="More">更多</span></span></div></div>
+        </div>
+        <div class="mua-reveal" data-delay="320">
+          <div class="mua-demo" id="demo" data-protocol="chat" aria-label="API 协议演示，使用本地示例数据" tabindex="-1">
+            <div class="mua-demo-top"><div role="tablist" aria-label="API 协议" style="display:flex;min-width:0"><button class="mua-demo-tab" type="button" role="tab" id="tab-chat" data-protocol-tab="chat" aria-selected="true" aria-controls="protocol-panel" tabindex="0">Chat</button><button class="mua-demo-tab" type="button" role="tab" id="tab-responses" data-protocol-tab="responses" aria-selected="false" aria-controls="protocol-panel" tabindex="-1">Responses</button><button class="mua-demo-tab" type="button" role="tab" id="tab-claude" data-protocol-tab="claude" aria-selected="false" aria-controls="protocol-panel" tabindex="-1">Claude</button><button class="mua-demo-tab" type="button" role="tab" id="tab-gemini" data-protocol-tab="gemini" aria-selected="false" aria-controls="protocol-panel" tabindex="-1">Gemini</button></div><span class="mua-ok" aria-label="示例状态码 200 OK">200 OK</span></div>
+            <div id="protocol-panel" role="tabpanel" aria-labelledby="tab-chat" tabindex="0" aria-live="off">
+              <div class="mua-endpoint"><span class="mua-method">POST</span><code class="mua-path" id="mua-path" title="/v1/chat/completions">/v1/chat/completions</code></div>
+              <div class="mua-code-grid"><div class="mua-code-block"><p class="mua-code-label">Request</p><pre class="mua-code" id="mua-request">curl -X POST "/v1/chat/completions" \
+  -H "Authorization: Bearer sk-••••" \
+  -d '{
+    "model": "your-model",
+    "messages": [
+      { "role": "user", "content": "..." }
+    ]
+  }'</pre></div><div class="mua-code-block"><p class="mua-code-label">Response</p><pre class="mua-code" id="mua-response">{
+  "choices": [{ "message": { "content": "Hello, developer." } }],
+  "usage": { "total_tokens": 27 }
+}</pre></div></div>
+            </div>
+            <div class="mua-demo-footer"><div class="mua-metrics"><span id="mua-latency">142 MS</span><span id="mua-tokens">27 TOKENS</span><span id="mua-cost">COST $0.00081</span></div><div class="mua-demo-meta"><span data-en="DEMO · SSE">演示数据 · SSE</span><button type="button" class="mua-pause" id="mua-auto-toggle" aria-label="暂停自动切换" aria-pressed="false"><svg aria-hidden="true"><use href="#mua-pause"/></svg></button></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mua-stats" aria-label="示例模板概览"><div class="mua-container mua-stats-grid">
+      <div><p class="mua-stat-value"><span data-count="4">4</span></p><p class="mua-stat-label" data-en="Protocol examples">协议演示</p></div><div><p class="mua-stat-value"><span data-count="8">8</span></p><p class="mua-stat-label" data-en="Feature modules">能力模块</p></div><div><p class="mua-stat-value"><span data-count="2">2</span></p><p class="mua-stat-label" data-en="Display themes">显示主题</p></div><div><p class="mua-stat-value"><span data-count="3">3</span></p><p class="mua-stat-label" data-en="Simple steps">接入步骤</p></div>
+    </div></section>
+
+    <section class="mua-section" id="features" aria-labelledby="features-title"><div class="mua-container">
+      <div class="mua-section-head mua-reveal"><p class="mua-eyebrow" data-en="CORE FEATURES">核心能力</p><h2 class="mua-heading" id="features-title"><span data-en="Built for developers,">为开发者打造，</span><br><span data-en="ready for what comes next">为下一步准备</span></h2></div>
+      <div class="mua-bento">
+        <article class="mua-feature mua-wide mua-reveal is-scale" data-delay="0"><div class="mua-feature-head"><span class="mua-num">01</span><h3 data-en="A consistent connection">统一连接</h3></div><p class="mua-feature-desc" data-en="One familiar interface for a broad ecosystem of models.">在熟悉的接口中，连接更广阔的模型生态。</p><div class="mua-models" aria-label="示例支持类型"><span>OpenAI</span><span>Claude</span><span>Gemini</span><span>DeepSeek</span><span>Qwen</span><span>Llama</span></div></article>
+        <article class="mua-feature mua-reveal is-scale" data-delay="100"><div class="mua-feature-head"><span class="mua-num">02</span><h3 data-en="Clear boundaries">清晰权限</h3></div><p class="mua-feature-desc" data-en="Give each application a clearly defined space to work.">为每个应用设置清晰、可管理的访问边界。</p><div class="mua-security" aria-hidden="true"><div class="mua-shield"><svg><use href="#mua-shield"/></svg><span class="mua-check"><svg><use href="#mua-check"/></svg></span></div></div></article>
+        <article class="mua-feature mua-reveal is-scale" data-delay="200"><div class="mua-feature-head"><span class="mua-num">03</span><h3 data-en="Thoughtful routing">有序调度</h3></div><p class="mua-feature-desc" data-en="Keep routing, limits, and cost signals close together.">让路由、用量与成本信息保持有序。</p><div class="mua-nodes"><div class="mua-node"><span>1</span><i aria-hidden="true"></i><span data-en="Load balancing">负载均衡</span></div><div class="mua-node"><span>2</span><i aria-hidden="true"></i><span data-en="Rate limits">速率控制</span></div><div class="mua-node"><span>3</span><i aria-hidden="true"></i><span data-en="Cost tracking">成本跟踪</span></div></div></article>
+        <article class="mua-feature mua-wide mua-reveal is-scale" data-delay="300"><div class="mua-feature-head"><span class="mua-num">04</span><h3 data-en="Developer friendly">开发者友好</h3></div><p class="mua-feature-desc" data-en="Keep familiar workflows across applications and tools.">让常用应用与工具沿用熟悉的工作流。</p><div class="mua-dev-visual"><div class="mua-avatar-stack" aria-label="API, SDK, CLI, Docs"><span>API</span><span>SDK</span><span>CLI</span><span>Docs</span></div><span class="mua-protocol-note"><svg aria-hidden="true"><use href="#mua-code"/></svg><span data-en="Multiple protocols">兼容多协议</span></span></div></article>
+      </div>
+      <div class="mua-mini-grid">
+        <article class="mua-mini mua-reveal" data-delay="0"><div class="mua-mini-icon" aria-hidden="true"><svg><use href="#mua-gauge"/></svg></div><h3 data-en="Performance">高性能</h3><p data-en="A clear place to inspect request performance.">在清晰的视图中查看请求表现。</p></article><article class="mua-mini mua-reveal" data-delay="100"><div class="mua-mini-icon" aria-hidden="true"><svg><use href="#mua-dollar"/></svg></div><h3 data-en="Transparent usage">透明用量</h3><p data-en="Keep usage and cost information easy to follow.">让用量与成本信息一目了然。</p></article><article class="mua-mini mua-reveal" data-delay="200"><div class="mua-mini-icon" aria-hidden="true"><svg><use href="#mua-users"/></svg></div><h3 data-en="Team workspace">团队协作</h3><p data-en="Organize applications and access as a team.">与团队一起管理应用和访问权限。</p></article><article class="mua-mini mua-reveal" data-delay="300"><div class="mua-mini-icon" aria-hidden="true"><svg><use href="#mua-heart"/></svg></div><h3 data-en="Room to grow">自由扩展</h3><p data-en="A flexible foundation for your own ideas.">为新的想法保留灵活的生长空间。</p></article>
+      </div>
+    </div></section>
+
+    <section class="mua-section mua-workflow" id="workflow" aria-labelledby="workflow-title"><div class="mua-container">
+      <div class="mua-section-head mua-centered mua-reveal"><p class="mua-eyebrow" data-en="HOW IT WORKS">工作流程</p><h2 class="mua-heading" id="workflow-title" data-en="Three simple steps">三步开始连接</h2></div>
+      <div class="mua-steps">
+        <article class="mua-step mua-reveal" data-delay="0"><div class="mua-step-icon" aria-hidden="true"><svg><use href="#mua-gear"/></svg><span class="mua-step-number">1</span></div><h3 data-en="Configure">配置</h3><p data-en="Choose a channel and define the access your application needs.">选择渠道，定义应用所需的访问方式。</p></article><article class="mua-step mua-reveal" data-delay="150"><div class="mua-step-icon" aria-hidden="true"><svg><use href="#mua-bolt"/></svg><span class="mua-step-number">2</span></div><h3 data-en="Connect">连接</h3><p data-en="Start from a familiar protocol and your existing workflow.">使用熟悉的协议，接入现有工作流。</p></article><article class="mua-step mua-reveal" data-delay="300"><div class="mua-step-icon" aria-hidden="true"><svg><use href="#mua-chart"/></svg><span class="mua-step-number">3</span></div><h3 data-en="Observe">观察</h3><p data-en="Bring usage, cost, and performance into one clear view.">在统一视图中观察用量、成本和性能。</p></article>
+      </div>
+    </div></section>
+
+    <section class="mua-section mua-cta" aria-labelledby="cta-title"><div class="mua-glow" aria-hidden="true"></div><div class="mua-cta-inner mua-reveal is-scale"><h2 class="mua-heading" id="cta-title"><span data-en="Ready for your">准备好开启</span><br><span class="mua-gradient" data-en="next AI idea?">下一个 AI 想法了吗？</span></h2><p data-en="Start with a clear foundation. Make room for the work you want to build.">从清晰可靠的基础开始，为你想创造的事物留出空间。</p><div class="mua-actions"><a class="mua-btn mua-btn-primary" href="#demo"><span data-en="Explore the demo">体验面板</span><svg class="mua-arrow" aria-hidden="true"><use href="#mua-arrow"/></svg></a><button class="mua-btn mua-btn-outline" type="button" data-guide data-en="Read the guide">阅读指南</button></div></div></section>
+  </main>
+  <footer class="mua-footer" id="footer"><div class="mua-container mua-footer-bar"><p>© <span data-year>2026</span> MyUi-A <span data-en="· Design sample">· 设计示例</span></p><p class="mua-footer-credit" data-en="Charcoal, soft light, and thoughtful details.">炭灰底色、柔和光晕与恰到好处的细节。</p></div></footer>
+
+  <dialog class="mua-mobile-menu" id="mua-mobile-menu" aria-label="导航菜单">
+    <div class="mua-mobile-top"><a class="mua-brand" href="#content"><svg class="mua-mark" aria-hidden="true"><use href="#mua-mark"/></svg><span>MyUi-A</span></a><div style="display:flex;gap:4px"><button class="mua-icon-btn" type="button" data-mobile-theme aria-label="切换深浅主题"><svg aria-hidden="true" data-theme-icon><use href="#mua-moon"/></svg></button><button class="mua-icon-btn" type="button" data-close-mobile aria-label="关闭导航菜单"><svg aria-hidden="true"><use href="#mua-close"/></svg></button></div></div>
+    <nav aria-label="移动导航"><a href="#features" style="--mua-order:0" data-en="Features">产品能力</a><a href="#demo" style="--mua-order:1" data-en="Protocol demo">示例面板</a><a href="#workflow" style="--mua-order:2" data-en="Workflow">工作流程</a><a href="#guide" data-guide style="--mua-order:3" data-en="Documentation">文档</a><a href="#footer" style="--mua-order:4" data-en="About">关于</a></nav><div class="mua-mobile-bottom"><a class="mua-btn mua-btn-primary" href="#demo" data-en="Get started">开始使用</a></div>
+  </dialog>
+  <dialog class="mua-guide" id="guide" aria-labelledby="guide-title"><div class="mua-guide-head"><h2 id="guide-title" data-en="A quick guide">快速指南</h2><button class="mua-icon-btn" type="button" data-close-guide aria-label="关闭指南"><svg aria-hidden="true"><use href="#mua-close"/></svg></button></div><p data-en="Use the four tabs to explore request and response formats. Try both display themes and the mobile navigation.">通过四个协议标签查看请求与响应格式，也可以体验深浅主题和移动端导航。</p><pre>POST /v1/chat/completions
+Authorization: Bearer sk-••••
+Content-Type: application/json</pre><p data-en="All examples are local. The demo does not send API requests or use a real key.">所有内容均为本地示例。面板不会发送 API 请求，也不会使用真实密钥。</p><div class="mua-actions"><button class="mua-btn mua-btn-primary" type="button" data-close-guide data-en="Got it">知道了</button></div></dialog>
+  <div class="mua-toast" id="mua-toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
